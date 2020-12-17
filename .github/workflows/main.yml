@@ -56,7 +56,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key:  ${{secrets.SSH_KEY }}
           script: |
-            cd ~/app/node_deploy
+            cd ~/app/node-deploy
             yarn
 
     #Executar as migrations do TypeORM
@@ -68,7 +68,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key:  ${{secrets.SSH_KEY }}
           script: |
-            cd ~/app/node_deploy
+            cd ~/app/node-deploy
             ./node_modules/.bin/typeorm migration:run
             
     #Restart no servidor Node.js          
