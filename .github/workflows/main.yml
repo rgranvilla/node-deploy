@@ -41,4 +41,5 @@ jobs:
       #Executar as migrations do TypeORM
       
       #Restart no servidor Node.js
+      #
       
