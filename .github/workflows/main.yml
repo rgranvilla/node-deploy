@@ -45,7 +45,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key:  ${{secrets.SSH_KEY }}
           source: ".,!node_modules"
-          target: "~/app/node_deploy"
+          target: "~/app/node-deploy"
       
     #Executar "yarn" na Digital Ocean / migrations do TypeORM / Restart no servidor Node.js
       - name: Run production scripts
@@ -56,7 +56,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key:  ${{secrets.SSH_KEY }}
           script: |
-            cd ~/app/node_deploy
+            cd ~/app/node-deploy
             yarn
             ./node_modules/.bin/typeorm migration:run
             cd ~
